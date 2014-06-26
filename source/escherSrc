@@ -1,0 +1,10 @@
+(require 2htdp/image)
+ 
+(define (escher dk md px m)
+(let eschr ([n m])
+(if (zero? n)
+(beside (rotate 150 (rhombus (/ px 8) 60 'solid dk))
+(rotate 30 (rhombus (/ px 8) 60 'solid md)))
+(let ([t (eschr (- n 1))])
+(beside (above t (rotate 180 t))
+(above t (rotate 180 t))) ))))
